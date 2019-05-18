@@ -1,8 +1,8 @@
-[![NPM](https://nodei.co/npm/expo-phaser.png)](https://nodei.co/npm/expo-phaser/)
+[![NPM](https://nodei.co/npm/expo-phaser3.png)](https://nodei.co/npm/expo-phaser3/)
 
-# expo-phaser
+# expo-phaser3
 
-Tools for using Phaser-ce to build native 2D games in Expo 👾
+Tools for using Phaser3 to build native 2D games in Expo
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,7 +13,7 @@ Tools for using Phaser-ce to build native 2D games in Expo 👾
 ### Installation
 
 ```bash
-yarn add expo-phaser
+yarn add expo-phaser3
 ```
 
 ### Usage
@@ -21,12 +21,12 @@ yarn add expo-phaser
 Import the library into your JavaScript file:
 
 ```js
-import ExpoPhaser from "expo-phaser";
+import ExpoPhaser3 from "expo-phaser3";
 ```
 
 ## Functions
 
-### `ExpoPhaser.game({ context: WebGLRenderingContext, ...extras })`
+### `ExpoPhaser3.game({ context: WebGLRenderingContext, ...extras })`
 
 Given a `context` from an
 [`Expo.GLView`](https://docs.expo.io/versions/latest/sdk/gl-view.html), return a
@@ -47,17 +47,17 @@ that draws into it.
 
 | Property |                              Type                              | Description                                      |
 | -------- | :------------------------------------------------------------: | ------------------------------------------------ |
-| game     | [`Phaser.Game`](https://phaser.io/docs/2.6.2/Phaser.Game.html) | The Phaser-ce game used for rendering game logic |
+| game     | [`Phaser.Game`](https://photonstorm.github.io/phaser3-docs/Phaser.Game.html) | The Phaser3 game used for rendering game logic |
 
 ## Example
 
 ```js
-const game = ExpoPhaser.game({ context });
+const game = ExpoPhaser3.game({ context });
 ```
 
 ## What does it do?
 
-Under the hood, ExpoPhaser is maintaining global instances of a few libraries.
+Under the hood, ExpoPhaser3 is maintaining global instances of a few libraries.
 
 - [Custom Phaser Pixi.js](https://github.com/photonstorm/phaser-ce/tree/master/src/pixi)
 - [Custom Phaser p2.js](https://github.com/photonstorm/phaser-ce/blob/master/build/custom/p2.js)
@@ -70,7 +70,7 @@ window.Phaser = require("phaser-ce/build/phaser");
 ```
 
 Other libs can be included but are not required. For instance you can import the custom Creature lib the same way.
-We also [override the `PIXI.WebGLRenderer.updateTexture`](https://github.com/expo/expo-phaser/tree/master/lib/Phaser.js) to make it compatible with Expo.
+We also [override the `PIXI.WebGLRenderer.updateTexture`](https://github.com/expo/expo-phaser3/tree/master/lib/Phaser.js) to make it compatible with Expo.
 
 Finally when a new instance of `Expo.Game` is created, we set the `document.readyState` to `'complete'` and save the global instance of `context`
 
@@ -91,7 +91,7 @@ const render = () => {
 ## Example
 
 It's important to note that you must preload all of your assets before starting the app, as the `Phaser.State.preload` method cannot be asynchronous.
-Creating a game in Expo is very simple with `ExpoPhaser`, we preload our assets, create a view, initialize our game, then add our assets.
+Creating a game in Expo is very simple with `ExpoPhaser3`, we preload our assets, create a view, initialize our game, then add our assets.
 
 **We create an `Expo.GLView` to render our game to.**
 
@@ -108,7 +108,7 @@ return (
 
 ```js
 function startGame({ context }) {
-  const game = ExpoPhaser.game({ context });
+  const game = ExpoPhaser3.game({ context });
 
   game.state.add("Playable", {
     preload: function() {
@@ -155,7 +155,7 @@ This example shows how to load an animated texture atlas and apply arcade physic
 ```js
 import React from "react";
 import Expo from "expo";
-import ExpoPhaser from "expo-phaser";
+import ExpoPhaser3 from "expo-phaser3";
 
 const Assets = {
   "man.png": require("./assets/man.png"),
@@ -188,7 +188,7 @@ export default class App extends React.Component {
 }
 
 function startGame({ context }) {
-  const game = ExpoPhaser.game({ context });
+  const game = ExpoPhaser3.game({ context });
 
   game.state.add("Playable", {
     preload: function() {

@@ -17,10 +17,6 @@ export default class Controls extends React.Component {
     this.subscribe();
   }
 
-  // shouldComponentUpdate() {
-  //   return false;
-  // }
-
   componentDidUpdate(prevProps) {
     const { gamePause } = this.props;
 

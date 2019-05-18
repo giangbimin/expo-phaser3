@@ -1,16 +1,18 @@
 {
-  "name": "expo-phaser",
-  "version": "0.0.1-alpha.0",
-  "description": "Build awesome 2D games with Phaser.js and Expo",
-  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
+  "name": "expo-phaser3",
+  "version": "0.0.1",
+  "description": "Phaser3 for Expo",
+  "author": "Alex Skoropletov <alex@skoropletov.ru> (http://skoropletov.ru/)",
   "license": "MIT",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "keywords": [
     "react",
     "native",
     "react-native",
-    "phaser-ce",
+    "phaser3",
     "phaser",
     "expo",
     "exponent",
@@ -29,11 +31,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/expo/expo-phaser.git"
+    "url": "https://github.com/alexskoropletov/expo-phaser"
   },
   "dependencies": {
-    "@expo/browser-polyfill": "^0.0.0-alpha.4",
-    "phaser-ce": "^2.9.4"
+    "@expo/browser-polyfill": "^0.0.1-alpha.2",
+    "phaser": "^3.16.2"
   },
   "directories": {
     "example": "examples",
